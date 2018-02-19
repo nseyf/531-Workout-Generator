@@ -4,7 +4,9 @@
   margin-top: 5px;
 }
 
-
+.title {
+   border-bottom: 1px solid #404040;
+}
 
 .container {
   display: grid;
