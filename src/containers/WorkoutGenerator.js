@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'; 
 import {
   createWorkout,
-  changeUnit
+  changeUnit,
+  setOneRep
 } from '../actions/actions';
 import ShowWorkout from '../components/ShowWorkout';
 
@@ -11,6 +12,9 @@ import ShowWorkout from '../components/ShowWorkout';
 
 class WorkoutGenerator extends Component {
   render() {
+
+  const { benchPress, overHeadPress, deadlift, squat, setOneRep } = this.props;
+    
     return (
       <div className="container">
       <div className="workout-controls">
@@ -19,10 +23,22 @@ class WorkoutGenerator extends Component {
       </h1>
       <h2> To begin, enter your 1RM (One Rep Max) for the following lifts:
       </h2>
-    
+      <div className="workout-inputs">
+    <label>Bench Press: </label>
+    <input placeholder={benchPress} value={benchPress} onChange={setOneRep}/>
+    <br />
+    <label>Overhead Press: </label>
+    <input value={overHeadPress}/>
+    <br />
+    <label>Deadlift: </label>
+    <input value={deadlift}/>
+    <br />
+    <label>Squat: </label>
+    <input value={squat}/>
+    </div>
       </div>
       
-      <ShowWorkout />
+      <ShowWorkout exercise={{benchPress, overHeadPress, deadlift, squat}}/>
       </div>
     )
   }
@@ -30,19 +46,21 @@ class WorkoutGenerator extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    oneRepBP: state.oneRepBP,
-    oneRepOHP: state.oneRepOHP,
-    oneRepSQ: state.oneRepSQ,
-    oneRepDL: state.oneRepDL,
+    benchPress: state.benchPress,
+    overHeadPress: state.overHeadPress,
+    squat: state.squat,
+    deadlift: state.deadlift,
     unit: state.unit,
-    workout: state.workout
+    workout: state.workout,
+    months: state.months,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     createWorkout,
-    changeUnit
+    changeUnit,
+    setOneRep
   }, dispatch)
 }
 

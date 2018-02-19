@@ -1,13 +1,18 @@
-
+import { 
+  CREATE_WORKOUT,
+  CHANGE_UNIT,
+  SET_ONEREP
+} from '../actions/actions';
 
 
 const initialState = {
-  oneRepBP: 0,
-  oneRepOHP: 0,
-  oneRepSQ: 0,
-  oneRepDL: 0,
+  benchPress: 0,
+  overHeadPress: 0,
+  squat: 0,
+  deadlift: 0,
   unit: 'lbs',
-  workout: ''
+  workout: [],
+  months: 0
 }
 
 
