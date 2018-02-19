@@ -13,7 +13,14 @@ import ShowWorkout from '../components/ShowWorkout';
 class WorkoutGenerator extends Component {
   render() {
 
-  const { benchPress, overHeadPress, deadlift, squat, setOneRep } = this.props;
+  const { 
+    benchPress, 
+    overHeadPress, 
+    deadlift, 
+    squat, 
+    setOneRep, 
+    workout, 
+    months } = this.props;
     
     return (
       <div className="container">
@@ -35,10 +42,19 @@ class WorkoutGenerator extends Component {
     <br />
     <label>Squat: </label>
     <input value={squat}/>
+    <button 
+    onClick={() => {
+      createWorkout({
+        benchPress, 
+        overHeadPress, 
+        deadlift, 
+        squat, 
+        months
+      })}}>Create Workout</button>
     </div>
       </div>
       
-      <ShowWorkout exercise={{benchPress, overHeadPress, deadlift, squat}}/>
+      <ShowWorkout workout={workout}/>
       </div>
     )
   }

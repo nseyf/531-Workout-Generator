@@ -1,1 +1,1 @@
-## 5-3-1 Workout Generator
+## 5/3/1 Workout Generator
