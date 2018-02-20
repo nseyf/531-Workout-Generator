@@ -26,104 +26,109 @@ export const createWorkout = (exercises, months) => {
 
 const createMonths = (exercises, months) => {
 
-  const { benchPress, overHeadPress, squat, deadlift} = exercises;
-  const workout = []
+  const workout = [];
 
+  let { benchPress, overHeadPress, squat, deadlift} = exercises;
 
       for(var i=0; i < months; i++) {
 
         const month = {
           id: i,
           1: {
-            benchPress: {
-              1: `${benchPress / 100 * 65} X 5`,
-              2: `${benchPress / 100 * 75} X 5`,
-              3: `${benchPress / 100 * 85} X 5+`
+            benchPressSets: {
+              1: `${Math.round(benchPress / 100 * 65)} X 5`,
+              2: `${Math.round(benchPress / 100 * 75)} X 5`,
+              3: `${Math.round(benchPress / 100 * 85)} X 5+`
             },
-            overHeadPress: {
-              1: `${overHeadPress / 100 * 65} X 5`,
-              2: `${overHeadPress / 100 * 75} X 5`,
-              3: `${overHeadPress / 100 * 85} X 5+`
+            overHeadPressSets: {
+              1: `${Math.round(overHeadPress / 100 * 65)} X 5`,
+              2: `${Math.round(overHeadPress / 100 * 75)} X 5`,
+              3: `${Math.round(overHeadPress / 100 * 85)} X 5+`
             },
-            squat: {
-              1: `${squat / 100 * 65} X 5`,
-              2: `${squat / 100 * 75} X 5`,
-              3: `${squat / 100 * 85} X 5+`
+            squatSets: {
+              1: `${Math.round(squat / 100 * 65)} X 5`,
+              2: `${Math.round(squat / 100 * 75)} X 5`,
+              3: `${Math.round(squat / 100 * 85)} X 5+`
             },
-            deadlift: {
-              1: `${deadlift / 100 * 65} X 5`,
-              2: `${deadlift / 100 * 75} X 5`,
-              3: `${deadlift / 100 * 85} X 5+`
+            deadliftSets: {
+              1: `${Math.round(deadlift / 100 * 65)} X 5`,
+              2: `${Math.round(deadlift / 100 * 75)} X 5`,
+              3: `${Math.round(deadlift / 100 * 85)} X 5+`
             },
           },
           2: {
-            benchPress: {
-              1: `${benchPress / 100 * 70} X 3`,
-              2: `${benchPress / 100 * 80} X 3`,
-              3: `${benchPress / 100 * 90} X 3+`
+            benchPressSets: {
+              1: `${Math.round(benchPress / 100 * 70)} X 3`,
+              2: `${Math.round(benchPress / 100 * 80)} X 3`,
+              3: `${Math.round(benchPress / 100 * 90)} X 3+`
             },
-            overHeadPress: {
-              1: `${overHeadPress / 100 * 70} X 3`,
-              2: `${overHeadPress / 100 * 80} X 3`,
-              3: `${overHeadPress / 100 * 90} X 3+`
+            overHeadPressSets: {
+              1: `${Math.round(overHeadPress / 100 * 70)} X 3`,
+              2: `${Math.round(overHeadPress / 100 * 80)} X 3`,
+              3: `${Math.round(overHeadPress / 100 * 90)} X 3+`
             },
-            squat: {
-              1: `${squat / 100 * 70} X 3`,
-              2: `${squat / 100 * 80} X 3`,
-              3: `${squat / 100 * 90} X 3+`
+            squatSets: {
+              1: `${Math.round(squat / 100 * 70)} X 3`,
+              2: `${Math.round(squat / 100 * 80)} X 3`,
+              3: `${Math.round(squat / 100 * 90)} X 3+`
             },
-            deadlift: {
-              1: `${deadlift / 100 * 70} X 3`,
-              2: `${deadlift / 100 * 80} X 3`,
-              3: `${deadlift / 100 * 90} X 3+`
+            deadliftSets: {
+              1: `${Math.round(deadlift / 100 * 70)} X 3`,
+              2: `${Math.round(deadlift / 100 * 80)} X 3`,
+              3: `${Math.round(deadlift / 100 * 90)} X 3+`
             },
           },
         3: {
-            benchPress: {
-            1: `${benchPress / 100 * 75} X 5`,
-            2: `${benchPress / 100 * 85} X 3`,
-            3: `${benchPress / 100 * 95} X 1+`
+            benchPressSets: {
+            1: `${Math.round(benchPress / 100 * 75)} X 5`,
+            2: `${Math.round(benchPress / 100 * 85)} X 3`,
+            3: `${Math.round(benchPress / 100 * 95)} X 1+`
           },
-            overHeadPress: {
-            1: `${overHeadPress / 100 * 75} X 5`,
-            2: `${overHeadPress / 100 * 85} X 3`,
-            3: `${overHeadPress / 100 * 95} X 1+`
+            overHeadPressSets: {
+            1: `${Math.round(overHeadPress / 100 * 75)} X 5`,
+            2: `${Math.round(overHeadPress / 100 * 85)} X 3`,
+            3: `${Math.round(overHeadPress / 100 * 95)} X 1+`
           },
-            squat: {
-            1: `${squat / 100 * 75} X 5`,
-            2: `${squat / 100 * 85} X 3`,
-            3: `${squat / 100 * 95} X 1+`
+            squatSets: {
+            1: `${Math.round(squat / 100 * 75)} X 5`,
+            2: `${Math.round(squat / 100 * 85)} X 3`,
+            3: `${Math.round(squat / 100 * 95)} X 1+`
           },
-            deadlift: {
-            1: `${deadlift / 100 * 75} X 5`,
-            2: `${deadlift / 100 * 85} X 3`,
-            3: `${deadlift / 100 * 95} X 1+`
+            deadliftSets: {
+            1: `${Math.round(deadlift / 100 * 75)} X 5`,
+            2: `${Math.round(deadlift / 100 * 85)} X 3`,
+            3: `${Math.round(deadlift / 100 * 95)} X 1+`
           },
         },
       4: {
-        benchPress: {
-        1: `${benchPress / 100 * 40} X 5`,
-        2: `${benchPress / 100 * 50} X 5`,
-        3: `${benchPress / 100 * 60} X 5+`
+        benchPressSets: {
+        1: `${Math.round(benchPress / 100 * 40)} X 5`,
+        2: `${Math.round(benchPress / 100 * 50)} X 5`,
+        3: `${Math.round(benchPress / 100 * 60)} X 5+`
       },
-        overHeadPress: {
-        1: `${overHeadPress / 100 * 40} X 5`,
-        2: `${overHeadPress / 100 * 50} X 5`,
-        3: `${overHeadPress / 100 * 60} X 5+`
+        overHeadPressSets: {
+        1: `${Math.round(overHeadPress / 100 * 40)} X 5`,
+        2: `${Math.round(overHeadPress / 100 * 50)} X 5`,
+        3: `${Math.round(overHeadPress / 100 * 60)} X 5+`
       },
-        squat: {
-        1: `${squat / 100 * 40} X 5`,
-        2: `${squat / 100 * 50} X 5`,
-        3: `${squat / 100 * 60} X 5+`
+        squatSets: {
+        1: `${Math.round(squat / 100 * 40)} X 5`,
+        2: `${Math.round(squat / 100 * 50)} X 5`,
+        3: `${Math.round(squat / 100 * 60)} X 5+`
       },
-        deadlift: {
-        1: `${deadlift / 100 * 40} X 5`,
-        2: `${deadlift / 100 * 50} X 5`,
-        3: `${deadlift / 100 * 60} X 5+`
+        deadliftSets: {
+        1: `${Math.round(deadlift / 100 * 40)} X 5`,
+        2: `${Math.round(deadlift / 100 * 50)} X 5`,
+        3: `${Math.round(deadlift / 100 * 60)} X 5+`
       },
       }
   }
   workout.push(month);
+
+  benchPress += 5;
+  overHeadPress += 5;
+  squat += 10;
+  deadlift += 10;
 }
 
 return workout;

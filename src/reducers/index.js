@@ -12,7 +12,7 @@ const initialState = {
   deadlift: 100,
   unit: 'lbs',
   workout: [],
-  months: 8
+  months: 5
 }
 
 
