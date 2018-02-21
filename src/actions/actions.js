@@ -1,39 +1,63 @@
 export const CREATE_WORKOUT = "CREATE_WORKOUT";
 export const CHANGE_UNIT = "CHANGE_UNIT";
-export const SET_ONEREP = "SET_ONEREP"
+export const SET_BENCH = "SET_BENCH";
+export const SET_DEADLIFT = "SET_DEADLIFT";
+export const SET_OHP = "SET_OHP";
+export const SET_SQUAT = "SET_SQUAT";
 
 // Use a createWorkout function and call that for the duration of the month array.
 
 // Control input for max rep
-export const setOneRep = (exercise, weight) => {
-
-  const newOneRepMax = {
-    exercise: weight
-  }
+export const setBench = (weight) => {
   return {
-    type: SET_ONEREP,
-    payload: newOneRepMax
+    type: SET_BENCH,
+    payload: weight
   }
 }
+
+export const setDeadlift = (weight) => {
+  return {
+    type: SET_DEADLIFT,
+    payload: weight
+  }
+}
+
+export const setSquat = (weight) => {
+  return {
+    type: SET_SQUAT,
+    payload: weight
+  }
+}
+
+export const setOHP = (weight) => {
+  return {
+    type: SET_OHP,
+    payload: weight
+  }
+}
+
+
 
 // Create workout object
 export const createWorkout = (exercises, months) => {
 
-  // Week one is 65% x 5, 75% x 5, 85% x 5+
-// Week two is 70% x 3, 80% x 3, 90% x 3+
-// Week three is 75% x 5, 85% x 3, 95% x 1+
-// Week four is 40% x 5, 50% x 5, 60% x 5
 
 const createMonths = (exercises, months) => {
 
   const workout = [];
 
-  let { benchPress, overHeadPress, squat, deadlift} = exercises;
+  let {
+    benchPress,
+    overHeadPress,
+    squat,
+    deadlift} = exercises;
 
+    // Create months for length equal to month entry
       for(var i=0; i < months; i++) {
 
         const month = {
           id: i,
+          // First Week
           1: {
             benchPressSets: {
               1: `${Math.round(benchPress / 100 * 65)} X 5`,
@@ -56,6 +80,7 @@ const createMonths = (exercises, months) => {
               3: `${Math.round(deadlift / 100 * 85)} X 5+`
             },
           },
+          // Second Week
           2: {
             benchPressSets: {
               1: `${Math.round(benchPress / 100 * 70)} X 3`,
@@ -78,6 +103,7 @@ const createMonths = (exercises, months) => {
               3: `${Math.round(deadlift / 100 * 90)} X 3+`
             },
           },
+          // Third Week
         3: {
             benchPressSets: {
             1: `${Math.round(benchPress / 100 * 75)} X 5`,
@@ -100,6 +126,7 @@ const createMonths = (exercises, months) => {
             3: `${Math.round(deadlift / 100 * 95)} X 1+`
           },
         },
+        // Fourth week
       4: {
         benchPressSets: {
         1: `${Math.round(benchPress / 100 * 40)} X 5`,
@@ -123,17 +150,18 @@ const createMonths = (exercises, months) => {
       },
       }
   }
+// Push completed month to workout array
   workout.push(month);
-
+// Increment max weights for progress of exercise
   benchPress += 5;
   overHeadPress += 5;
   squat += 10;
   deadlift += 10;
+
 }
 
 return workout;
 }
-
 
   return {
     type: CREATE_WORKOUT,

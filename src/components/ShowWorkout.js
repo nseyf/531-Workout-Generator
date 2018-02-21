@@ -7,12 +7,22 @@ const ShowWorkout = (data) => {
 
 
 // to get the first set of the first week of BP
-// console.log(workout[0][1].benchPress[1])
 
+
+// When done, remember to come back and implement
+// a recursive solution. Do not repeat code.
+
+const createWeek = (week) => {
+  for(var exercise in week) {
+    console.log(week[exercise])
+  }
+}
 
 
 const createWorkout = (month) => {
-  console.log(month)
+  for(var week in month) {
+    createWeek(month[week]);
+  }
 }
   // Transform workout object into JSX here
 

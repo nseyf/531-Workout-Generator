@@ -4,35 +4,48 @@ import { bindActionCreators } from 'redux';
 import {
   createWorkout,
   changeUnit,
-  setOneRep
+  setBench,
+  setDeadlift,
+  setSquat,
+  setOHP
 } from '../actions/actions';
 import ShowWorkout from '../components/ShowWorkout';
 
-// Need Squat, Deadlift, Overhead Press, Bench Press
 
 class WorkoutGenerator extends Component {
 
   render() {
-
+    
   const {
     benchPress,
     createWorkout,
     overHeadPress,
     deadlift,
     squat,
-    setOneRep,
+    setBench,
+    setDeadlift,
+    setSquat,
+    setOHP,
     workout,
     months, } = this.props;
 
     return (
       <div className="container">
+
       <div className="workout-controls">
+
       <h1 className="title">
       5-3-1 Generator
       </h1>
+
       <h2> To begin, enter your 1RM (One Rep Max) for the following lifts:
       </h2>
+
       <div className="workout-inputs">
+      <input placeholder="0"
+      onChange={setBench}
+      value={benchPress}
+      />
     <button
     onClick={() => {
     createWorkout({
@@ -42,9 +55,13 @@ class WorkoutGenerator extends Component {
       squat},
       months);
     }}>Create Workout</button>
+
     </div>
+
       </div>
+
       <ShowWorkout workout={workout}/>
+
       </div>
     )
   }
@@ -66,7 +83,10 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     createWorkout,
     changeUnit,
-    setOneRep
+    setBench,
+    setSquat,
+    setDeadlift,
+    setOHP,
   }, dispatch)
 }
 
