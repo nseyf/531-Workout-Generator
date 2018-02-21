@@ -15,6 +15,10 @@
   grid-template-rows: 3;
 }
 
+.week-block {
+  background: red;
+}
+
 .workout-controls {
   background: white;
   padding: 10px;
@@ -34,12 +38,12 @@ label {
 
 
 @media (max-width: 1200px) {
-  
+
   .workout-controls {
     grid-column: 1 / -1;
   }
   .workout-container {
     grid-column: 1 / -1;
-    
+
   }
 }
