@@ -15,8 +15,16 @@
   grid-template-rows: 3;
 }
 
+.month-block {
+  background: blue;
+}
+
 .week-block {
-  background: red;
+  outline: 1px solid #404040;
+}
+
+.set-block {
+  outline: 1px solid blue;
 }
 
 .workout-controls {

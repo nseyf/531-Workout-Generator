@@ -4,47 +4,83 @@ import { bindActionCreators } from 'redux';
 import {
   createWorkout,
   changeUnit,
-  setBench,
-  setDeadlift,
-  setSquat,
-  setOHP
 } from '../actions/actions';
 import ShowWorkout from '../components/ShowWorkout';
 
 
 class WorkoutGenerator extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      benchPress: '',
+      deadlift: '',
+      squat: '',
+      overHeadPress: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    this.setState({
+      [name]: parseInt(value) ? parseInt(value): 0
+    })
+  }
+
   render() {
-    
+
+
   const {
     benchPress,
     createWorkout,
     overHeadPress,
     deadlift,
     squat,
-    setBench,
-    setDeadlift,
-    setSquat,
-    setOHP,
     workout,
     months, } = this.props;
+    console.log(this.state);
 
     return (
       <div className="container">
 
       <div className="workout-controls">
 
-      <h1 className="title">
+      <h2 className="title">
       5-3-1 Generator
-      </h1>
-
-      <h2> To begin, enter your 1RM (One Rep Max) for the following lifts:
       </h2>
 
+      <h3> To begin, enter your 1RM (One Rep Max) for the following lifts:
+      </h3>
+
       <div className="workout-inputs">
+      <p>Bench Press</p>
       <input placeholder="0"
-      onChange={setBench}
-      value={benchPress}
+      onChange={this.handleChange}
+      value={this.state.benchPress}
+      name="benchPress"
+      />
+      <p>Deadlift</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      value={this.state.deadlift}
+      name="deadlift"
+      />
+      <p>Squat</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      value={this.state.squat}
+      name="squat"
+      />
+      <p>Overhead Press</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      value={this.state.overHeadPress}
+      name="overHeadPress"
       />
     <button
     onClick={() => {
@@ -83,10 +119,6 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     createWorkout,
     changeUnit,
-    setBench,
-    setSquat,
-    setDeadlift,
-    setOHP,
   }, dispatch)
 }
 

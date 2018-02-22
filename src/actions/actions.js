@@ -1,40 +1,7 @@
 export const CREATE_WORKOUT = "CREATE_WORKOUT";
 export const CHANGE_UNIT = "CHANGE_UNIT";
-export const SET_BENCH = "SET_BENCH";
-export const SET_DEADLIFT = "SET_DEADLIFT";
-export const SET_OHP = "SET_OHP";
-export const SET_SQUAT = "SET_SQUAT";
 
 // Use a createWorkout function and call that for the duration of the month array.
-
-// Control input for max rep
-export const setBench = (weight) => {
-  return {
-    type: SET_BENCH,
-    payload: weight
-  }
-}
-
-export const setDeadlift = (weight) => {
-  return {
-    type: SET_DEADLIFT,
-    payload: weight
-  }
-}
-
-export const setSquat = (weight) => {
-  return {
-    type: SET_SQUAT,
-    payload: weight
-  }
-}
-
-export const setOHP = (weight) => {
-  return {
-    type: SET_OHP,
-    payload: weight
-  }
-}
 
 
 
@@ -166,6 +133,7 @@ return workout;
   return {
     type: CREATE_WORKOUT,
     payload: createMonths(exercises, months)
+
   }
 
 }
