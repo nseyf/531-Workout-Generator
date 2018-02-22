@@ -15,16 +15,10 @@
   grid-template-rows: 3;
 }
 
-.month-block {
-  background: blue;
-}
-
-.week-block {
-  outline: 1px solid #404040;
-}
-
-.set-block {
-  outline: 1px solid blue;
+.workout-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
 }
 
 .workout-controls {

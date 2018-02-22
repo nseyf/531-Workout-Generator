@@ -28,7 +28,7 @@ class WorkoutGenerator extends Component {
     const value = target.value;
 
     this.setState({
-      [name]: parseInt(value) ? parseInt(value): 0
+      [name]: parseInt(value, 10) ? parseInt(value, 10): 0
     })
   }
 
@@ -36,14 +36,8 @@ class WorkoutGenerator extends Component {
 
 
   const {
-    benchPress,
-    createWorkout,
-    overHeadPress,
-    deadlift,
-    squat,
     workout,
     months, } = this.props;
-    console.log(this.state);
 
     return (
       <div className="container">
@@ -84,11 +78,8 @@ class WorkoutGenerator extends Component {
       />
     <button
     onClick={() => {
-    createWorkout({
-      benchPress,
-      overHeadPress,
-      deadlift,
-      squat},
+    createWorkout(
+      this.state,
       months);
     }}>Create Workout</button>
 

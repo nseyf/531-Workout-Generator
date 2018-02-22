@@ -132,8 +132,14 @@ return workout;
 
   return {
     type: CREATE_WORKOUT,
-    payload: createMonths(exercises, months)
-
+    payload: {
+      workout: createMonths(exercises, months),
+      benchPress: exercises.benchPress,
+      overHeadPress: exercises.overHeadPress,
+      deadlift: exercises.deadlift,
+      squat: exercises.squat
+    }
+    
   }
 
 }

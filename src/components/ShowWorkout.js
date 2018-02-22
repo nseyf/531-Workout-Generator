@@ -27,6 +27,7 @@ const createWeek = (week) => {
 }
 
 const createWorkout = (month) => {
+  console.log(month)
     for(var week in month) {
       return (
       <div className="month-block" key={month.id}>

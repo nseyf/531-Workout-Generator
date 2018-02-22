@@ -1,6 +1,5 @@
 import {
   CREATE_WORKOUT,
-  CHANGE_UNIT,
 } from '../actions/actions';
 
 
