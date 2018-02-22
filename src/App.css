@@ -1,9 +1,9 @@
 .App {
   text-align: center;
-  font-family: "Rock Salt";
+  font-family: "Helvetica";
   margin-top: 5px;
 }
-
+/* "Rock Salt" */
 .title {
    border-bottom: 1px solid #404040;
 }
