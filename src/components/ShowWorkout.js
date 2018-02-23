@@ -12,27 +12,18 @@ const ShowWorkout = (data) => {
 // When done, remember to come back and implement
 // a recursive solution. Do not repeat code.
 
-const createSets = (exercises) => {
-  for(var set in exercises) {
-    return <p>exercises[set]</p>
-  }
-}
 
-
+/*
 const createWeek = (week) => {
-
-  for(var exercises in week) {
+console.log(week)
+  /* for(var exercises in week) {
     createSets(week[exercises])
   }
-}
+} */
 
 const createWorkout = (month) => {
     for(var week in month) {
-      return (
-      <div className="month-block" key={month.id}>
-      {createWeek(month[week])}
-      </div>
-    )
+      console.log(month[week])
   }
 
 }

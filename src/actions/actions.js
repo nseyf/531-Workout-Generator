@@ -128,7 +128,7 @@ const createMonths = (data) => {
   deadlift += 10;
 
 }
-console.log(workout);
+
 return workout;
 }
 
