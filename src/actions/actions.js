@@ -6,10 +6,10 @@ export const CHANGE_UNIT = "CHANGE_UNIT";
 
 
 // Create workout object
-export const createWorkout = (exercises, months) => {
+export const createWorkout = (data) => {
 
 
-const createMonths = (exercises, months) => {
+const createMonths = (data) => {
 
   const workout = [];
 
@@ -17,7 +17,9 @@ const createMonths = (exercises, months) => {
     benchPress,
     overHeadPress,
     squat,
-    deadlift} = exercises;
+    deadlift,
+    months
+  } = data;
 
     // Create months for length equal to month entry
       for(var i=0; i < months; i++) {
@@ -126,20 +128,21 @@ const createMonths = (exercises, months) => {
   deadlift += 10;
 
 }
-
+console.log(workout);
 return workout;
 }
 
   return {
     type: CREATE_WORKOUT,
     payload: {
-      workout: createMonths(exercises, months),
-      benchPress: exercises.benchPress,
-      overHeadPress: exercises.overHeadPress,
-      deadlift: exercises.deadlift,
-      squat: exercises.squat
+      workout: createMonths(data),
+      benchPress: data.benchPress,
+      overHeadPress: data.overHeadPress,
+      deadlift: data.deadlift,
+      squat: data.squat,
+      months: data.months
     }
-    
+
   }
 
 }

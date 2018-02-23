@@ -10,7 +10,7 @@ const initialState = {
   deadlift: '',
   unit: 'lbs',
   workout: [],
-  months: 1
+  months: ''
 }
 
 
@@ -22,7 +22,7 @@ export const WorkoutGenerator = (state = initialState, action) => {
       squat: action.payload.squat,
       overHeadPress: action.payload.overHeadPress,
       deadlift: action.payload.deadlift,
-      workout: action.payload.workout
+      workout: action.payload.workout,
     });
     default:
     return state;

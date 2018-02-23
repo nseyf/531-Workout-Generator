@@ -17,7 +17,8 @@ class WorkoutGenerator extends Component {
       benchPress: '',
       deadlift: '',
       squat: '',
-      overHeadPress: ''
+      overHeadPress: '',
+      months: ''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -36,8 +37,9 @@ class WorkoutGenerator extends Component {
 
 
   const {
+    createWorkout,
     workout,
-    months, } = this.props;
+   } = this.props;
 
     return (
       <div className="container">
@@ -55,32 +57,43 @@ class WorkoutGenerator extends Component {
       <p>Bench Press</p>
       <input placeholder="0"
       onChange={this.handleChange}
+      onClick={()=> {this.setState({benchPress: ''})}}
       value={this.state.benchPress}
       name="benchPress"
       />
       <p>Deadlift</p>
       <input placeholder="0"
       onChange={this.handleChange}
+      onClick={()=> {this.setState({deadlift: ''})}}
       value={this.state.deadlift}
       name="deadlift"
-      />
-      <p>Squat</p>
-      <input placeholder="0"
-      onChange={this.handleChange}
-      value={this.state.squat}
-      name="squat"
       />
       <p>Overhead Press</p>
       <input placeholder="0"
       onChange={this.handleChange}
+      onClick={()=> {this.setState({overHeadPress: ''})}}
       value={this.state.overHeadPress}
       name="overHeadPress"
+      />
+      <p>Squat</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      onClick={()=> {this.setState({squat: ''})}}
+      value={this.state.squat}
+      name="squat"
+      />
+      <p>Months</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      onClick={()=> {this.setState({months: ''})}}
+      value={this.state.months}
+      name="months"
       />
     <button
     onClick={() => {
     createWorkout(
-      this.state,
-      months);
+      this.state
+    );
     }}>Create Workout</button>
 
     </div>
@@ -96,13 +109,8 @@ class WorkoutGenerator extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    benchPress: state.benchPress,
-    overHeadPress: state.overHeadPress,
-    squat: state.squat,
-    deadlift: state.deadlift,
     unit: state.unit,
     workout: state.workout,
-    months: state.months,
   }
 }
 
