@@ -26,6 +26,14 @@ input {
   width: 100%;
 }
 
+.month-block {
+  outline: 1px solid orange;
+  background: red;
+  min-height: 200px;
+  min-width: 200px;
+  display: inline-block
+}
+
 .workout-controls {
   background: white;
   padding: 10px;
