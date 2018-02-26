@@ -61,13 +61,6 @@ class WorkoutGenerator extends Component {
       value={this.state.benchPress}
       name="benchPress"
       />
-      <p>Deadlift</p>
-      <input placeholder="0"
-      onChange={this.handleChange}
-      onClick={()=> {this.setState({deadlift: ''})}}
-      value={this.state.deadlift}
-      name="deadlift"
-      />
       <p>Overhead Press</p>
       <input placeholder="0"
       onChange={this.handleChange}
@@ -81,6 +74,13 @@ class WorkoutGenerator extends Component {
       onClick={()=> {this.setState({squat: ''})}}
       value={this.state.squat}
       name="squat"
+      />
+      <p>Deadlift</p>
+      <input placeholder="0"
+      onChange={this.handleChange}
+      onClick={()=> {this.setState({deadlift: ''})}}
+      value={this.state.deadlift}
+      name="deadlift"
       />
       <p>Months</p>
       <input placeholder="0"

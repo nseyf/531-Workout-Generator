@@ -28,12 +28,27 @@ input {
 
 .month-block {
   outline: 1px solid orange;
-  background: red;
   min-height: 200px;
   min-width: 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2;
+}
+.month-title {
+  grid-row: 1;
 }
 .week-block {
-  background: orange;
+  grid-row: 2;
+  outline: 1px solid blue;
+
+}
+.set-list {
+  border: 1px solid blue;
+}
+.set {
+  list-style-type: none;
+  text-align: left;
+  text-decoration: none;
 }
 
 .workout-controls {
@@ -43,10 +58,10 @@ input {
 }
 
 .workout-container {
-  text-align: left;
   display: grid;
+  text-align: center;
   grid-gap: 5px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   padding: 10px;
   background: white;
   grid-column: 3 / -1;
