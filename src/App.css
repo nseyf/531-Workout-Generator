@@ -31,7 +31,9 @@ input {
   background: red;
   min-height: 200px;
   min-width: 200px;
-  display: inline-block
+}
+.week-block {
+  background: orange;
 }
 
 .workout-controls {
@@ -42,6 +44,9 @@ input {
 
 .workout-container {
   text-align: left;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
   padding: 10px;
   background: white;
   grid-column: 3 / -1;
@@ -55,6 +60,6 @@ input {
   }
   .workout-container {
     grid-column: 1 / -1;
-
+    grid-template-columns: repeat(1, 1fr);
   }
 }

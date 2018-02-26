@@ -5,37 +5,69 @@ const ShowWorkout = (data) => {
 
   const { workout } = data;
 
-
-// to get the first set of the first week of BP
-
-
 // When done, remember to come back and implement
 // a recursive solution. Do not repeat code.
 
-
-/*
-const createWorkout = (month) => {
-  Object.keys(month)
-  .map(week =>
-    Object.keys(month[week])
-    .map(exercise => {
-      const sets = month[week][exercise];
-        console.log(sets[1])
-    return <li>`${sets[1]}, ${sets[2]}, ${sets[3]}`</li>
-    })
-)
-
+const exerciseName = (exercise) => {
+  switch(exercise) {
+    case "benchPressSets":
+    return "Bench Press";
+    case "deadliftSets":
+    return "Deadlift";
+    case "squatSets":
+    return "Squat";
+    case "overHeadPressSets":
+    return "Overhead Press";
+    default:
+    return;
+  }
 }
-*/
 
 const createWorkout = workout.map((month) => {
-  const weeks = Object.keys(month).map((e, i) => {
-    return <div key={i}>{e}</div>
-  })
-  return <div key={month.id} className="month-block">
-  <h4>Month {month.id + 1}</h4>
-  {weeks}</div>
+
+  const weeks = Object.keys(month)
+  .map((e, i) => {
+    const week = month[e];
+    if(e !== "id") {
+      return <div
+      className="week-block"
+      key={i}>
+      <h5>Week {e}</h5>
+        {
+          Object.keys(week)
+          .map(
+            (x, y) => {
+
+              const exercise = week[x];
+
+              return <ul key={exercise}>
+
+              <p>{exerciseName(exercise)}</p>
+
+              <li>{exercise[1]}</li>
+              <li>{exercise[2]}</li>
+              <li>{exercise[3]}</li>
+
+              </ul>
+    }
+  )
+}
+
+    </div>
+
+  }
 })
+
+  return <div
+  key={month.id}
+  className="month-block">
+  <h4>
+  Month {month.id + 1}
+  </h4>
+  {weeks}
+  </div>
+}
+)
 
   // Transform workout object into JSX here
 
