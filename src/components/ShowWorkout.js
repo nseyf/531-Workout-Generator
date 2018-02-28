@@ -25,10 +25,12 @@ const exerciseName = (exercise) => {
 
 const createWorkout = workout.map((month) => {
 
-  const weeks = Object.keys(month)
-  .map((e, i) => {
+  const weeks = Object.keys(month).map((e, i) => {
+    
     const week = month[e];
+    
     if(e !== "id") {
+      
       return <div
       className="week-block"
       key={i}>
@@ -36,13 +38,13 @@ const createWorkout = workout.map((month) => {
         {
           Object.keys(week)
           .map(
-            (x, y) => {
-
-              const exercise = week[x];
+            (key, index) => {
+              
+              const exercise = week[key];
 
               return <ul className="set-list" key={exercise}>
 
-              <p>{exerciseName(exercise)}</p>
+              <p className="exercise-name">{exerciseName(key)}</p>
 
               <li className="set">{exercise[1]}</li>
               <li className="set">{exercise[2]}</li>
@@ -52,7 +54,6 @@ const createWorkout = workout.map((month) => {
     }
   )
 }
-
     </div>
 
   }

@@ -27,7 +27,6 @@ input {
 }
 
 .month-block {
-  outline: 1px solid orange;
   min-height: 200px;
   min-width: 200px;
   display: grid;
@@ -39,16 +38,16 @@ input {
 }
 .week-block {
   grid-row: 2;
-  outline: 1px solid blue;
-
+  border: 1px solid black;
 }
 .set-list {
-  border: 1px solid blue;
+  padding: 5px;
+  text-decoration: none;
+  border-top: 1px solid black;
 }
 .set {
+  text-align: center;
   list-style-type: none;
-  text-align: left;
-  text-decoration: none;
 }
 
 .workout-controls {
@@ -77,4 +76,5 @@ input {
     grid-column: 1 / -1;
     grid-template-columns: repeat(1, 1fr);
   }
+
 }
