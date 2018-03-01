@@ -30,11 +30,11 @@ const createWorkout = workout.map((month) => {
   // The createWorkout function maps over the month array
   // For each month, a weeks object is created
   const weeks = Object.keys(month).map((e, i) => {
-    
+
     // Then each week is iterated over to produce the
     // appropriate values
     const week = month[e];
-    
+
     if(e !== "id") {
       // Returns a div containing the exercises
       // and sets for that week
@@ -49,22 +49,22 @@ const createWorkout = workout.map((month) => {
           Object.keys(week)
           .map(
             (key, index) => {
-              
+
               const exercise = week[key];
 
-              return <ul 
-              className="set-list" 
+              return <ul
+              className="set-list"
               key={exercise}>
 
-              <p 
+              <p
               className="exercise-name">
               {exerciseName(key)}</p>
 
-              <li 
+              <li
               className="set">{exercise[1]}</li>
-              <li 
+              <li
               className="set">{exercise[2]}</li>
-              <li 
+              <li
               className="set">{exercise[3]}</li>
 
       </ul>
