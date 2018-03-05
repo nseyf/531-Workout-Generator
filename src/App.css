@@ -26,6 +26,16 @@ input {
   width: 100%;
 }
 
+.create-workout-button {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 15px;
+  background: #6991c7;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
 .month-block {
   min-height: 200px;
   min-width: 200px;
@@ -38,12 +48,14 @@ input {
 }
 .week-block {
   grid-row: 2;
-  border: 1px solid black;
+  border: 1px solid grey;
 }
+
 .set-list {
-  padding: 5px;
+  padding: 0px;
+  background: white;
   text-decoration: none;
-  border-top: 1px solid black;
+  border-top: 1px solid grey;
 }
 .set {
   text-align: center;
@@ -59,10 +71,10 @@ input {
 .workout-container {
   display: grid;
   text-align: center;
+  background: white;
   grid-gap: 5px;
   grid-template-columns: repeat(2, 1fr);
   padding: 10px;
-  background: white;
   grid-column: 3 / -1;
 }
 

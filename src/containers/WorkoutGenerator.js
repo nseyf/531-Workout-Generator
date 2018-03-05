@@ -28,6 +28,8 @@ class WorkoutGenerator extends Component {
     const name = target.name;
     const value = target.value;
 
+    // One function to handle all state updates
+
     this.setState({
       [name]: parseInt(value, 10) ? parseInt(value, 10): 0
     })
@@ -90,6 +92,7 @@ class WorkoutGenerator extends Component {
       name="months"
       />
     <button
+    className="create-workout-button"
     onClick={() => {
     createWorkout(
       this.state
