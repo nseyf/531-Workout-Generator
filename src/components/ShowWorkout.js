@@ -87,7 +87,6 @@ const createWorkout = workout.map((month) => {
 }
 )
 
-
   return (
     <div className="workout-container">
     {createWorkout}
